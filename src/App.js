@@ -16,8 +16,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasklist: toDoArray,
+      taskList: toDoArray,
       task: '',
+      top10: [],
     };
   }
 
@@ -38,9 +39,15 @@ class App extends React.Component {
     };
 
     this.setState({
-      taskList: this.state.toDoArray.concat(newTask),
+      taskList:
+      this.state.taskList.concat(newTask),
       task: '',
     });
+  }
+
+  strikeOut = event => {
+    const entry = event.target.value;
+    console.log(entry);
   }
 
 
@@ -48,8 +55,13 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <ToDoList toDoArray={toDoArray}/>
-        <ToDoForm addTask={this.addTask}
+        <ToDoList 
+          tasklist={this.state.taskList}
+          onClick={this.strikeOut}
+        />
+        <ToDoForm 
+        addFunction={this.addTask}
+        addTask={this.addTask}
         task={this.state.task}
         changeHandler={this.changeHandler}/>
       </div>

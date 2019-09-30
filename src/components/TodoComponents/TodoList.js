@@ -1,13 +1,17 @@
 import React from 'react';
 
 function ToDoList(props) {
-  // console.log(props);
+  console.log(props);
   //props.toDoArray = list of tasks
   return (
     <div>
       {
-        props.toDoArray.map((info) => (
-          <div key={info.task}>{info.task}</div>
+        props.tasklist.map((info) => (
+          <div 
+            key={info.id}
+            onClick={props.onClick}
+            value={props.tasklist.task}>
+            {info.task}</div>
         ))
       }
     </div>

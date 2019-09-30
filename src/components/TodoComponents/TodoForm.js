@@ -4,7 +4,7 @@ function ToDoForm(props) {
   return (
     <div>
       test ToDoForm
-      <form onSubmit={props.addTask}>
+      <form onSubmit={props.addFunction}>
         <input value={props.task}
           onChange=
           {props.changeHandler}
