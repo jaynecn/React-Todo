@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ToDoList(props) {
+function TodoList(props) {
   console.log(props);
   //props.toDoArray = list of tasks
   return (
@@ -10,7 +10,7 @@ function ToDoList(props) {
           <div 
             key={info.id}
             onClick={props.onClick}
-            value={props.tasklist.task}>
+            value={info.task}>
             {info.task}</div>
         ))
       }
@@ -18,4 +18,4 @@ function ToDoList(props) {
   )
 }
 
-export default ToDoList;
+export default TodoList;

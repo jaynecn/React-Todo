@@ -1,9 +1,8 @@
 import React from 'react';
 
-function ToDoForm(props) {
+function TodoForm(props) {
   return (
     <div>
-      test ToDoForm
       <form onSubmit={props.addFunction}>
         <input value={props.task}
           onChange=
@@ -18,4 +17,4 @@ function ToDoForm(props) {
   )
 }
 
-export default ToDoForm;
+export default TodoForm;

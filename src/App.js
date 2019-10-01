@@ -1,6 +1,6 @@
 import React from 'react';
-import ToDoList from './components/TodoComponents/ToDoList';
-import ToDoForm from './components/TodoComponents/ToDoForm';
+import ToDoList from './components/TodoComponents/TodoList';
+import ToDoForm from './components/TodoComponents/TodoForm';
 
 export const toDoArray = [
   { task: 'Feed the Cat', id: 0, completed: false },
@@ -18,7 +18,7 @@ class App extends React.Component {
     this.state = {
       taskList: toDoArray,
       task: '',
-      top10: [],
+      completed: [],
     };
   }
 
