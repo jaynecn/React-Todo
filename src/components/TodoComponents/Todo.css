@@ -1,0 +1,13 @@
+.list-of-tasks {
+  color: green;
+  padding: 5px;
+}
+
+
+.clicked-button {
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  margin-left: 5px;
+}

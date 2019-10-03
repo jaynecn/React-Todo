@@ -9,9 +9,14 @@ function TodoForm(props) {
           {props.changeHandler}
           type="text"
         />
-        <button className="add-task" onClick=
-        {props.addTask}>Add Task</button>
-        <button className="clear-btn">Clear Completed</button>
+        <button className="add-task"
+          onClick={props.addTask}
+          >Add Task</button>
+        <button 
+          className="clear-btn"
+          onClick={props.removeTodo}
+          >
+          Clear Completed</button>
       </form>
     </div>
   )

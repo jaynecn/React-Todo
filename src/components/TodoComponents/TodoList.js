@@ -1,18 +1,23 @@
 import React from 'react';
+import './Todo.css';
 
 function TodoList(props) {
-  console.log(props);
-  //props.toDoArray = list of tasks
+  // console.log(props);
   return (
     <div>
       {
-        props.tasklist.map((info) => (
-          <div 
+        props.taskList.map((info) => {
+          // console.log(info);
+          return (
+          <div className="list-of-tasks"
             key={info.id}
-            onClick={props.onClick}
-            value={info.task}>
-            {info.task}</div>
-        ))
+            >{info.task}
+            <button className="clicked-button"
+              value={info.task}
+              onClick={props.markCompleted}
+              >x</button>
+          </div>)
+        })
       }
     </div>
   )
