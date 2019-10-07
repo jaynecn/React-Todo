@@ -54,13 +54,13 @@ class App extends React.Component {
   markCompleted = (info) => {
     info.preventDefault();
     const clickedId = info.target.value;
-    // console.log(clickedId);
+    console.log(clickedId);
 
     let jayne = clickedId.toString();
     // console.log(jayne);
 
     const clickedItem = this.state.taskList.filter((info) => info.task === jayne);
-    console.log(clickedItem);
+    // console.log(clickedItem);
 
     clickedItem.forEach((info) => {
       info.completed = true;

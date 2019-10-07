@@ -1,13 +1,11 @@
 .list-of-tasks {
   display: flex;
   justify-content: space-between;
-  color: green;
+  color: rgb(40, 189, 40);
   padding: 5px;
   background: '#f4f4f4';
   border-bottom: 1px #ccc dotted;
-  /* text-decoration: info.completed 
-    ? 'line-through'
-    : 'none'; */
+  font-size: 20px;
 }
 
 .checked-tasks {
@@ -15,7 +13,7 @@
   justify-content: space-between;
   padding: 5px;
   border-bottom: 1px #ccc dotted;
-  color: blue;
+  color: rgb(6, 6, 251);
 }
 
 .checked-tasks .clicked-button {
@@ -33,6 +31,7 @@
 .checked-div{
   text-decoration: line-through;
 }
+
 .mini-div{
   display: flex;
 }
