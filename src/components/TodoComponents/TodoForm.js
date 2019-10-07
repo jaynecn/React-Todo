@@ -1,21 +1,25 @@
 import React from 'react';
 
-function ToDoForm(props) {
+function TodoForm(props) {
   return (
     <div>
-      test ToDoForm
       <form onSubmit={props.addFunction}>
         <input value={props.task}
           onChange=
           {props.changeHandler}
           type="text"
         />
-        <button className="add-task" onClick=
-        {props.addTask}>Add Task</button>
-        <button className="clear-btn">Clear Completed</button>
+        <button className="add-task"
+          onClick={props.addTask}
+          >Add Task</button>
+        <button 
+          className="clear-btn"
+          onClick={props.removeTodo}
+          >
+          Clear Completed</button>
       </form>
     </div>
   )
 }
 
-export default ToDoForm;
+export default TodoForm;

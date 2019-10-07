@@ -1,6 +1,8 @@
 import React from 'react';
-import ToDoList from './components/TodoComponents/ToDoList';
-import ToDoForm from './components/TodoComponents/ToDoForm';
+import ToDoList from './components/TodoComponents/TodoList';
+import ToDoForm from './components/TodoComponents/TodoForm';
+import { isUnaryExpression } from '@babel/types';
+
 
 export const toDoArray = [
   { task: 'Feed the Cat', id: 0, completed: false },
@@ -18,7 +20,7 @@ class App extends React.Component {
     this.state = {
       taskList: toDoArray,
       task: '',
-      top10: [],
+      changing: [],
     };
   }
 
@@ -27,7 +29,6 @@ class App extends React.Component {
       task: info.target.value
       });
   }
-  
 
   addTask = (event) => {
     event.preventDefault();
@@ -45,10 +46,35 @@ class App extends React.Component {
     });
   }
 
-  strikeOut = event => {
-    const entry = event.target.value;
-    console.log(entry);
+  removeTodo = (info) => {
+      
+    // setToDos((todos) => todos.filter((info) => info.id !== id))
   }
+
+  markCompleted = (info) => {
+    info.preventDefault();
+    const clickedId = info.target.value;
+    console.log(clickedId);
+
+    let jayne = clickedId.toString();
+    // console.log(jayne);
+
+    const clickedItem = this.state.taskList.filter((info) => info.task === jayne);
+    // console.log(clickedItem);
+
+    clickedItem.forEach((info) => {
+      info.completed = true;
+    })
+    console.log(clickedItem);
+
+    this.setState({
+      changing: this.state.changing.concat(clickedItem),
+    });
+
+
+  }
+
+
 
 
   render() {
@@ -56,14 +82,16 @@ class App extends React.Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <ToDoList 
-          tasklist={this.state.taskList}
-          onClick={this.strikeOut}
+          taskList={this.state.taskList}
+          task={this.state.task}
+          markCompleted={this.markCompleted}
         />
         <ToDoForm 
         addFunction={this.addTask}
         addTask={this.addTask}
         task={this.state.task}
-        changeHandler={this.changeHandler}/>
+        changeHandler={this.changeHandler}
+        removeTodo={this.removeTodo}/>
       </div>
     );
   }
