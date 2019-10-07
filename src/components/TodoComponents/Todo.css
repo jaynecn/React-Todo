@@ -16,10 +16,11 @@
   padding: 5px;
   border-bottom: 1px #ccc dotted;
   color: blue;
-  text-decoration: line-through;
 }
 
-
+.checked-tasks .clicked-button {
+  text-decoration: none;
+}
 .clicked-button {
   border: none;
   background-color: red;
@@ -29,6 +30,9 @@
   margin-right: 10px;
 }
 
+.checked-div{
+  text-decoration: line-through;
+}
 .mini-div{
   display: flex;
 }

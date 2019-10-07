@@ -20,12 +20,12 @@ function TodoList(props) {
         props.taskList.map((info) => {
           // console.log(info);
           return (
-          <div>
+          <div key={info.id}>
              {
             info.completed === true 
               ? <div className="checked-tasks" key=     {info.id}>
-                  <div className="mini-div">
-                    <input type="checkbox"/>
+                  <div className="checked-div">
+                    <input type="checkbox" onClick={props.markCompleted}/>
                     {info.task}           
                   </div>
                   <button className="clicked-button"

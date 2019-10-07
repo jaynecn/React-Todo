@@ -60,7 +60,7 @@ class App extends React.Component {
     // console.log(jayne);
 
     const clickedItem = this.state.taskList.filter((info) => info.task === jayne);
-    // console.log(clickedItem);
+    console.log(clickedItem);
 
     clickedItem.forEach((info) => {
       info.completed = true;
