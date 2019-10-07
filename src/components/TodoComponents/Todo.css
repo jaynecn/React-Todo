@@ -1,6 +1,22 @@
 .list-of-tasks {
+  display: flex;
+  justify-content: space-between;
   color: green;
   padding: 5px;
+  background: '#f4f4f4';
+  border-bottom: 1px #ccc dotted;
+  /* text-decoration: info.completed 
+    ? 'line-through'
+    : 'none'; */
+}
+
+.checked-tasks {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px #ccc dotted;
+  color: blue;
+  text-decoration: line-through;
 }
 
 
@@ -9,5 +25,10 @@
   background-color: red;
   color: white;
   border-radius: 50%;
-  margin-left: 5px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.mini-div{
+  display: flex;
 }
